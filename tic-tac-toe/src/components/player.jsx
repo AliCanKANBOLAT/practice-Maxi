@@ -1,12 +1,16 @@
 //player.jsx
 import { useState } from "react"
-export default function Player({initialName,symbol, isActive}) {
+export default function Player({initialName,symbol, isActive, onChangeName}) {
 const [ playerName, setPlayerName] = useState(initialName)
 const [isEditing, setIsEditing] = useState(false);
 
 
-function handleClick() {
+function handleEditClick() {
   setIsEditing(prev=>!prev)
+  if(isEditing) {
+    onChangeName(symbol, playerName)
+  }
+
 }
 function handleChange (event) {
   const enteredName = event.target.value;
@@ -18,7 +22,7 @@ return(
     {isEditing ? <input type="text" required value={playerName} onChange={handleChange} /> : <span className="player-name"> {playerName} </span>}
     <span className="player-symbol">{symbol} </span>
     </span>
-    <button onClick={handleClick}> {isEditing ? "Speichern" : "Benutzernamen eingeben"} </button>
+    <button onClick={handleEditClick}> {isEditing ? "Speichern" : "Name eingeben"} </button>
     </li>
  
 )

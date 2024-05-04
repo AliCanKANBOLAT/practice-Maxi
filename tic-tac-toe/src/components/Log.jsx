@@ -1,7 +1,10 @@
-export default function Log() {
+//Log.jsx
+export default function Log({turns}) {
 
-  useS
+ 
   return <ol id="log">
-
+    {turns.map(turn => (
+    <li key={`${turn.square.row}${turn.square.col}`}>  {turn.player} ausgewählt {turn.square.row}, {turn.square.col} 
+    </li>) )}
   </ol>
 }
