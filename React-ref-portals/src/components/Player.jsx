@@ -1,21 +1,26 @@
+import { useRef } from "react";
 import { useState } from "react";
 
 export default function Player() {
-  const [enteredPlayerName, setEnteredPlayerName] = useState(null)
-  const [submitted, setSubmitted] = useState(false)
-  function handleChange(event) {
-    setSubmitted(false)
-    setEnteredPlayerName(event.target.value)
-  }
+  const inputRef = useRef(null)
+
+  const [enteredPlayerName, setEnteredPlayerName] = useState('')
+  
+  
   function handleClick() {
-    setSubmitted(true)
+    setEnteredPlayerName(inputRef.current.value)
+    
   }
   return (
     <section id="player">
-      <h2>Welcome {submitted ? enteredPlayerName : 'to the Guest who has not declared their name yet...'}</h2>
+      <h2>Welcome {enteredPlayerName ?? 'to the Guest who has not declared their name yet...'}</h2>
       <p>
-        <input type="text" onChange={handleChange} value={enteredPlayerName}/>
-        <button onClick={handleClick}>Set Name</button>
+        <input type="text" 
+          ref={inputRef}/>
+        <button  
+        onClick={handleClick}
+        >Set Name
+        </button>
       </p>
     </section>
   );
