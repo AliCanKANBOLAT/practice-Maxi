@@ -10,8 +10,8 @@ export default function NewProject( {onAdd,onCancel} ) {
 
   function handleSave() {
     const enteredTitle = title.current.value;
-    const enteredDescription = title.current.value;
-    const enteredDueDate = title.current.value;
+    const enteredDescription = description.current.value;
+    const enteredDueDate = dueDate.current.value;
 
     if(enteredTitle.trim() === "" || enteredDescription.trim()==="" || enteredDueDate.trim()==="" ) {
       modal.current.open();
