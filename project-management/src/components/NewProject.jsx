@@ -11,9 +11,9 @@ export default function NewProject( {onAdd,onCancel} ) {
   function handleSave() {
     const enteredTitle = title.current.value;
     const enteredDescription = title.current.value;
-    const entereDueDate = title.current.value;
+    const enteredDueDate = title.current.value;
 
-    if(enteredTitle.trim() === "" || enteredDescription.trim()==="" || dueDate.trim()==="" ) {
+    if(enteredTitle.trim() === "" || enteredDescription.trim()==="" || enteredDueDate.trim()==="" ) {
       modal.current.open();
       return;
     }
@@ -21,7 +21,7 @@ export default function NewProject( {onAdd,onCancel} ) {
     onAdd({
       title: enteredTitle,
       description: enteredDescription,
-      dueDate : entereDueDate
+      dueDate : enteredDueDate
     });
 
 
