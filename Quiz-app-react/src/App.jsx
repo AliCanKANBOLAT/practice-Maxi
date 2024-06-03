@@ -1,3 +1,15 @@
-function App() {}
+import Header from "./components/Header";
+import Quiz from "./components/Quiz";
 
-export default App;
+
+export default function App(){
+  return(
+    <>
+    <Header />
+    <main>
+    <Quiz />
+    </main>
+    
+    </>
+  )
+};
