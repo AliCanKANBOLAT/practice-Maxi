@@ -1,15 +1,13 @@
 import Header from "./components/Header";
 import Quiz from "./components/Quiz";
 
-
-export default function App(){
-  return(
+export default function App() {
+  return (
     <>
-    <Header />
-    <main>
-    <Quiz />
-    </main>
-    
+      <Header />
+      <main>
+        <Quiz />
+      </main>
     </>
-  )
-};
+  );
+}
